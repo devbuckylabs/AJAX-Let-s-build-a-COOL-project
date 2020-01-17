@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+
+  
+<div>
+    <button onclick="init()">Send</button>
+    
+</div>  
+   
+<div id="container"></div>   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+    <script>
+        function init(){
+        theObject = new XMLHttpRequest();
+        theObject.open("GET","javascript.php",true); 
+            
+        theObject.onreadystatechange() {
+
+            if(theObject.readyState == 4 || theObject.status == 200){
+                document.getElementById("container").innerHTML= theObject.responseText;
+                
+            }             
+            
+        }
+        
+        theObject.send();
+        }
+    </script>
+
+</body>
+
+</html>
